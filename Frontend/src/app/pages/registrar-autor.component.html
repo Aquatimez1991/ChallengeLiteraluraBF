@@ -1,0 +1,25 @@
+<h2>📚 Registrar Nuevo Autor</h2>
+
+<form [formGroup]="autorForm" (ngSubmit)="registrar()">
+  <label>
+    Nombre del autor: *
+    <input type="text" formControlName="nombre" />
+  </label>
+  <br />
+
+  <label>
+    Fecha de nacimiento:
+    <input type="date" formControlName="fechaDeNacimiento" />
+  </label>
+  <br />
+
+  <label>
+    Fecha de muerte:
+    <input type="date" formControlName="fechaDeMuerte" />
+  </label>
+  <br />
+
+  <button type="submit">Guardar</button>
+</form>
+
+<p *ngIf="mensaje" style="margin-top: 10px;">{{ mensaje }}</p>

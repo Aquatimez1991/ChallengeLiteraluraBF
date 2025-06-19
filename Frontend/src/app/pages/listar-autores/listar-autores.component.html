@@ -1,0 +1,24 @@
+<h2>👨‍🏫 Lista de Autores</h2>
+
+<div *ngIf="cargando">Cargando autores...</div>
+
+<table *ngIf="!cargando && autores.length > 0" border="1" cellpadding="8">
+  <thead>
+  <tr>
+    <th>Nombre</th>
+    <th>Nacimiento</th>
+    <th>Fallecimiento</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let autor of autores">
+    <td>{{ autor.nombre }}</td>
+    <td>{{ autor.fechaDeNacimiento || 'N/A' }}</td>
+    <td>{{ autor.fechaDeMuerte || 'N/A' }}</td>
+  </tr>
+  </tbody>
+</table>
+
+<div *ngIf="!cargando && autores.length === 0">
+  No se encontraron autores registrados.
+</div>

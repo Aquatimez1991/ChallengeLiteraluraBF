@@ -39,6 +39,8 @@ public class Autor {
         return nombre;
     }
 
+    public void setNombre(String nombre) {this.nombre = nombre;}
+
     public Integer getFechaDeNacimiento() {
         return fechaDeNacimiento;
     }

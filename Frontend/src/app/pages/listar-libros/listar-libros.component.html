@@ -1,0 +1,30 @@
+<h2>📚 Lista de Libros</h2>
+
+<div *ngIf="cargando">Cargando libros...</div>
+
+<table *ngIf="!cargando && libros.length > 0" border="1" cellpadding="8">
+  <thead>
+  <tr>
+    <th>Título</th>
+    <th>Idiomas</th>
+    <th>Descargas</th>
+    <th>Autor(es)</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let libro of libros">
+    <td>{{ libro.titulo }}</td>
+    <td>{{ libro.idiomas?.join(', ') || 'N/A' }}</td>
+    <td>{{ libro.numeroDeDescargas }}</td>
+    <td>
+      <ul>
+        <li *ngFor="let autor of libro.autores">{{ autor.nombre }}</li>
+      </ul>
+    </td>
+  </tr>
+  </tbody>
+</table>
+
+<div *ngIf="!cargando && libros.length === 0">
+  No se encontraron libros registrados.
+</div>
